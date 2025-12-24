@@ -98,4 +98,4 @@ You can also hardcode the same terraform variables into **terraform.tfvars**, wh
 
 The GCS bucket, and the ZIP file included, will stay after the deployment. This is an expected backup of the Cloud Run Function source code.
 
-Need help ? Feel free to reach out at **support@your-data.cloud**
+Need help ? Feel free to reach out at **riccardo.malesani@gmail.com**
