@@ -1,14 +1,14 @@
 const {DataformClient} = require('@google-cloud/dataform').v1;
 const dataformClient = new DataformClient();
 
-exports.runDataform = async (event,res) => {
+exports.runDataform = async (event) => {
 
   //The env variables are to be defined by terraform apply or terraform.tfvars
   const projectId = process.env.PROJECT;
   const parent = 'projects/'+projectId+'/locations/'+process.env.LOCATION+'/repositories/'+process.env.REPO;
   const workspaceId = parent + '/workspaces/'+process.env.WORKSPACE;
 
-  const eventData = JSON.parse(Buffer.from(event.body.message.data, 'base64').toString());
+  const eventData = JSON.parse(Buffer.from(event.data, 'base64').toString());
   const destinationTableId = eventData.protoPayload.serviceData.jobCompletedEvent.job.jobConfiguration.load.destinationTable.tableId;
 
   const Date_Format = (date) => {
