@@ -180,9 +180,18 @@ data "google_project" "project" {
   ]
 }
 
-resource "google_project_iam_member" "dataform_editor_permission" {
+resource "google_project_iam_member" "run_runtime_sa_permissions" {
+  for_each = toset([
+    "roles/dataform.editor",
+    "roles/bigquery.dataOwner",           # BigQuery Data Owner
+    "roles/dataform.serviceAgent",        # Dataform Service Agent
+    "roles/logging.viewAccessor",         # Logs View Accessor
+    "roles/secretmanager.secretAccessor", # Secret Manager Secret Accessor
+    "roles/iam.serviceAccountUser"        # Service Account User
+  ])
+
   project = var.project_id
-  role    = "roles/dataform.editor"
+  role    = each.key
   member  = "serviceAccount:${google_service_account.run_runtime_sa.email}"
   
   depends_on = [
