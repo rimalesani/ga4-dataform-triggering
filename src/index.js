@@ -53,7 +53,7 @@ exports.runDataform = async (event) => {
   };
 
   const response2 = await dataformClient.createWorkflowInvocation(request2)
-  res.status(200).send("dataform_ga4_invoke_" + Date_Format(today) + " DONE");
+  console.log("dataform_ga4_invoke_" + Date_Format(today) + " DONE");
   return response2;
 
 };
