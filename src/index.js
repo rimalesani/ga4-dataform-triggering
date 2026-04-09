@@ -52,6 +52,7 @@ exports.runDataform = async (event) => {
       }
   };
 
+  // Run request2 and log result:
   const response2 = await dataformClient.createWorkflowInvocation(request2)
   console.log("dataform_ga4_invoke_" + Date_Format(today) + " DONE");
   return response2;
