@@ -40,7 +40,7 @@ Terraform will enable all the required GCP APIs and it will deploy the following
 In your cloud shell, run the following:
 
 ```bash
-git clone https://github.com/yourdata-cloud/ga4-dataform-triggering
+git clone https://github.com/rimalesani/ga4-dataform-triggering
 cd ga4-dataform-triggering
 ```
 
