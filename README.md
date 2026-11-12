@@ -60,11 +60,11 @@ terraform init -upgrade
 
 ```
 terraform apply \
-   -var="project_id=<your-project-id>"
-   -var="region=<where-all-the-resources-will-be-created>"
-   -var="log_filter_string=<your-GA4-property-id>"
-   -var="env_var_2=<your-dataform-repository-region"
-   -var="env_var_3=<your-dataform-repository>"
+   -var="project_id=<your-project-id>" \
+   -var="region=<where-all-the-resources-will-be-created>" \
+   -var="log_filter_string=<your-GA4-property-id>" \
+   -var="env_var_2=<your-dataform-repository-region" \
+   -var="env_var_3=<your-dataform-repository>" \
    -var="env_var_4=<your-dataform-workspace>"
 ```
 
@@ -72,11 +72,11 @@ If you want to destroy all the resources deployed, just run (you need to reset t
 
 ```
 terraform destroy \
-   -var="project_id=<your-project-id>"
-   -var="region=<where-all-the-resources-will-be-created>"
-   -var="log_filter_string=<your-GA4-property-id>"
-   -var="env_var_2=<your-dataform-repository-region"
-   -var="env_var_3=<your-dataform-repository>"
+   -var="project_id=<your-project-id>" \
+   -var="region=<where-all-the-resources-will-be-created>" \
+   -var="log_filter_string=<your-GA4-property-id>" \
+   -var="env_var_2=<your-dataform-repository-region" \
+   -var="env_var_3=<your-dataform-repository>" \
    -var="env_var_4=<your-dataform-workspace>"
 ```
 ** Nothing will happen to your Dataform model, 'terraform destroy' just removes the pipeline **
@@ -90,7 +90,7 @@ terraform workspace new <your-project-id>
 
 terraform init
 terraform apply \
-   -var.... #see above
+   -var.... #see above \
    ...................
 ```
 
